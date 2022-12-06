@@ -1,4 +1,45 @@
-<!-- Hero Section -->
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewprt"
+        content="width=device-width, initial-scale=1.0">
+        <title>Caylia Bonnick</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/8b3afa4262.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="navbar_container">
+                <a href="#home" id="navbar__logo">Caylia Bonnick</a> 
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="#home" class="navbar__links" id="home-page">Home</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#about-me" class="navbar__links" id="aboutme-page">About Me</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#experince" class="navbar__links" id="experience-page">Experience</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#projects" class="navbar__links" id="projects-page">Projects</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="#contact-me" class="button" id="contactme">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
         <div class="hero" id="home">
             <div class="hero__container">
                 <h1 class="hero__heading">My Personal <span>Portfolio</span></h1>
@@ -10,15 +51,55 @@
         <!-- About Section -->
         <div class="main" id="about">
               <div class="main__container">
-                <div class="main__image--container">
-                    <div class="main__image--card">ICON</div>
+                <div class="main__img--container">
+                    <div class="main__img--card"><img src="https://lh3.googleusercontent.com/pw/AL9nZEV-dJnEDbgUlajJpLM3bcOAOJYDSYwRCmNDZ4OSk3EFSQbBxj-Ue2FMZZOe955mI2GO1W2U-Yjx2eukbEgC9dDgVZaXROPrFF5kb6zG73OK27tcAp072Cv_j5HMeb1t_71iBfor5HhqTsfey3CkbBn7Fg=w1232-h1642-no?authuser=0" /></div>
                 </div>
                 <div class="main__content">
                     <h1>About</h1>
                     <h2>Introduction</h2>
-                    <p>Schedule a call to learn more about our services</p>
-                    <button class="main__btn"><a href="#">Schedule Call</a></button>
+                    <p>Hi, I'm Caylia!</p>
+                    <p>I am a second year electrical engineering student studying at McMaster University. 
+                        I am interested in hardware engineering as well as front and back end developement.
+                        I have a passion for learning about the way our most commonly used electronic devices and applications work. 
+                        My career goal would be to design and impliment hardware and software into computers.
+                    </p>
                 </div>
               </div>
         </div>
+
+        <!-- Experience Section -->
+        <div class="experience" id="experience">
+            <h1>Experience</h1>
+            <div class="experience__wrapper">
+                <div class="experience__card">
+                    <h2>Custom Colorways</h2>
+                    <p>AI Powered Tech</p>
+                    <div class="experience__btn"><button>Get Started</button></div>
+                </div>   
+                <div class="experience__card">
+                    <h2>Are you Ready</h2>
+                    <p>Take the Leap</p>
+                    <div class="experience__btn"><button>Get Started</button></div>
+                </div>  
+                <div class="experience__card">
+                    <h2>Full graident</h2>
+                    <p>100 Combos</p>
+                    <div class="experience__btn"><button>Get Started</button></div>
+                </div>  
+                <div class="experience__card">
+                    <h2>INfinite</h2>
+                    <p>1000's of colors</p>
+                    <div class="experience__btn"><button>Get Started</button></div>
+                </div>  
+
+            </div>
+        </div>
+
+
+
+
         <script src="app.js"></script>
+
+
+    </body>
+</html>
