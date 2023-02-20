@@ -73,13 +73,13 @@ nav ul li a:hover::after{
 .header-text h1{
     font-size: 60px;
     margin-top: 20px;
-    color:#beb8eb;
+    color:#ababab;
 }
 
 .header-text h2{
     font-size: 25px;
     margin-top: 20px;
-    color: #5e5c6c;
+    color: #ababab;
 }
 
 /* ----------About Section---------- */
