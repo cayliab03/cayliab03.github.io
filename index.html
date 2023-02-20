@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caylia Bonnick</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <a href="#header"><img src="Images/Caylia's logo.png" class="logo"></a>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="uil uil-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="uil uil-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Electrical Engineering Student</p>
+            <h1>Hi, I'm <span>Caylia Bonnick</span></h1>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/Headshot.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm a second year Electrical Engineering Co-op student at McMaster University.      
+                    I'm a highly motivated, curious, hardworking, and ambitious student with a passion 
+                    for web and hardware development!</p>
+                
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('skills')">Technical Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>2021 - 2025</span><br>McMaster University<br>Pursuing a bachelor's degree in Electrical Engineering</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>Programing Languages</span><br>Python, C/C++, CSS, JavaScript, HTML, MATLAB, R, Verilog, VHDL</li>
+                           
+                            <li><span><br>Tools</span><br>GitHub, Hubspot, Visual Studio Code, Eclipse IDE, R Studio, Analog Discovery 2, 
+                                Autodesk Inventor, Raspberry Pi, Microsoft Office, ORCAD PSpice, Quartus II</li>
+
+                            <li><span><br>Equipment Expertise</span><br>Breadboard, Oscilloscopes, Digital Multimeters, Signal Generators, 
+                                Function Generators, Voltage and Current Probes, Integrated Circuits</li>
+
+                            <li><span><br>Spoken Languages</span><br>Fluency in English and French</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                        <li><span>2022 - Present</span><br>Research and Conference Executive Director at McMaster Women* in Science and Engineering (WISE)</li>
+
+                        <li><span><br>2019 - Present</span><br>Joe Fresh Sales Associate at Real Canadian Superstore</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Projects Section -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="project-list">
+            <!--Project 1-->
+            <div class="project">
+                <img src="Images/Bend Your FootPrint.jpeg">
+                <div class="layer">
+                    <h3>Bend Your FootPrint</h3>
+                    <p>An interactive website with an embedded quiz that measures the 
+                        user's carbon footprint.
+                    </p>
+                    <a href="https://devpost.com/software/bend-your-footprint"><i class="uil uil-external-link-alt"></i></a>
+                </div>
+            </div>
+            <!--Project 2-->
+            <div class="project">
+                <img src="Images/Bend Your FootPrint.jpeg">
+                <div class="layer">
+                    <h3>Portable Game Console</h3>
+                    <p>A portable game console that uses a Raspberry Pi to emulate classic
+                        video games through RetroPi.
+                    </p>
+                    <a href="#"><i class="uil uil-external-link-alt"></i></a>
+                </div>
+            </div>
+            <!--Project 3-->
+            <div class="project">
+                <img src="Images/Bend Your FootPrint.jpeg">
+                <div class="layer">
+                    <h3>Portfolio Website</h3>
+                    <p>A personal website to showcase my experiences, projects, and achievements.
+                    </p>
+                    <a href="https://github.com/cayliab03/cayliab03.github.io"><i class="uil uil-external-link-alt"></i></a>
+                </div>
+            </div>
+            <!--Project 4-->
+            <div class="project">
+                <img src="Images/Bend Your FootPrint.jpeg">
+                <div class="layer">
+                    <h3>Sorting Robot</h3>
+                    <p>A python-coded recycling robot that sorts, transports, and deposits
+                        containers to their corresponding recycling bins.
+                    </p>
+                    <a href="https://github.com/cayliab03/Project-3-Robot-Code"><i class="uil uil-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/cayliab03" class="btn">Explore my GitHub</a>
+    </div>
+
+</div>
+
+<!-- Contact Section -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact</h1>
+                <p>Looking forward to hearing from you!</p>
+                <div class="social-icons">
+                    <a href="mailto:cayliab@gmail.com"><i class="uil uil-envelope-alt"></i></a>
+                    <a href="https://github.com/cayliab03"><i class="uil uil-github-alt"></i></a>
+                    <a href="https://www.linkedin.com/in/caylia-bonnick/"><i class="uil uil-linkedin-alt"></i></a>
+                </div>
+                <a href="Images/Caylia_Bonnick_Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email Address" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2023. Made with <i class="uil uil-heart-alt"></i> by Caylia Bonnick.</p>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu")
+
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    } 
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzFaW05yvjhHhEHrYO-vjZHospyvv2IDAIyCv-rgC7NEAxdN5SARaYXUCMUnPbJtLMC_w/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
