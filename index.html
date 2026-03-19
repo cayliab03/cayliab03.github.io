@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caylia Bonnick | Electrical Engineer</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0B0E14] text-[#E6EDF3] antialiased">
+
+    <div id="loader" class="fixed inset-0 z-[100] bg-[#0B0E14] flex items-center justify-center font-mono transition-opacity duration-1000">
+        <div class="text-center">
+            <span id="boot-text" class="text-[#00F5FF] text-xl md:text-2xl tracking-[0.3em]"></span>
+            <span id="cursor" class="inline-block w-3 h-6 bg-[#00F5FF] ml-1 animate-pulse align-middle"></span>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 px-6 py-5 md:px-12 flex justify-between items-center opacity-0 transition-opacity duration-1000" id="main-nav">
+        <a href="#" class="text-2xl font-bold text-[#00F5FF] tracking-tighter hover:scale-105 transition-transform">CB.</a>
+        
+        <div class="hidden md:flex items-center space-x-10 text-[10px] uppercase tracking-[0.2em] font-semibold text-gray-400">
+            <a href="#about" class="nav-link hover:text-white">About</a>
+            <a href="#education" class="nav-link hover:text-white">Education</a>
+            <a href="#experience" class="nav-link hover:text-white">Experience</a>
+            <a href="#projects" class="nav-link hover:text-white">Projects</a>
+            <a href="#skills" class="nav-link hover:text-white">Skills</a>
+            <a href="#contact" class="group relative px-5 py-2 overflow-hidden rounded-full border border-[#00F5FF]/50 text-[#00F5FF] hover:text-[#0B0E14] transition-colors duration-300">
+                <span class="absolute inset-0 bg-[#00F5FF] translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-10"></span>
+                Contact
+            </a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-gray-400 hover:text-[#00F5FF] focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0B0E14]/95 z-[60] flex flex-col items-center justify-center space-y-8 hidden opacity-0 transition-all duration-300 backdrop-blur-lg">
+        <button id="close-menu" class="absolute top-8 right-8 text-white text-4xl">&times;</button>
+        <a href="#about" class="text-2xl font-bold text-white hover:text-[#00F5FF]">About</a>
+        <a href="#education" class="text-2xl font-bold text-white hover:text-[#00F5FF]">Education</a>
+        <a href="#experience" class="text-2xl font-bold text-white hover:text-[#00F5FF]">Experience</a>
+        <a href="#projects" class="text-2xl font-bold text-white hover:text-[#00F5FF]">Projects</a>
+        <a href="#contact" class="text-2xl font-bold text-[#00F5FF]">Contact</a>
+    </div>
+
+    <section id="home-content" class="relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 overflow-hidden opacity-0 transition-opacity duration-[2000ms] gap-8 lg:gap-0">
+        
+        <div class="order-2 lg:order-1 flex-1 flex flex-col items-center lg:items-end text-center lg:text-right lg:pr-12 z-10">
+            <h2 class="text-white text-5xl md:text-6xl font-bold tracking-tighter leading-tight">
+                Hey there,<br>
+                <span class="text-[#00F5FF]">I'm Caylia!</span>
+            </h2>
+        </div>
+
+        <div class="order-1 lg:order-2 flex-grow max-w-[280px] md:max-w-md lg:max-w-xl relative z-10 flex items-center justify-center group">
+            <div class="absolute inset-0 bg-[#00F5FF]/5 blur-[120px] rounded-full group-hover:bg-[#00F5FF]/10 transition-colors duration-700"></div>
+            <div class="w-full relative">
+                <dotlottie-player id="robot-player" src="images/anima-bot.lottie" background="transparent" speed="1" style="width: 100%; height: auto;" loop autoplay></dotlottie-player>
+            </div>
+        </div>
+
+        <div class="order-3 lg:order-3 flex-1 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-12 z-10">
+            <h2 class="text-white text-5xl md:text-6xl font-bold tracking-tighter uppercase leading-[0.85]">
+                Electrical <br>
+                <span class="text-gray-600">Engineer</span>
+            </h2>
+        </div>
+
+        <a href="#about" id="scroll-arrow" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-0 transition-all duration-1000 group z-20">
+            <span class="text-[10px] uppercase tracking-[0.5em] text-gray-500 group-hover:text-[#00F5FF] transition-colors font-bold">Let's Go!</span>
+            <div class="relative w-[1px] h-12 bg-white/10 overflow-hidden">
+                <div id="scroll-line" class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#00F5FF] to-transparent animate-scroll-line"></div>
+            </div>
+        </a>
+    </section>
+
+<section id="about" class="py-24 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-[#00F5FF] to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-[#161B22] rounded-2xl overflow-hidden border border-white/10">
+                <img src="images/Headshot.jpg" id="profile-pic" alt="Caylia Bonnick" class="w-full h-[500px] object-cover grayscale transition-all duration-1000 ease-in-out">
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#00F5FF]/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="space-y-8">
+            <div>
+                <h2 class="text-sm uppercase tracking-[0.3em] text-[#00F5FF] font-bold mb-4">My Background</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Ambitious. Technical. <span class="italic text-gray-500">Driven</span>.</h3>
+            </div>
+
+            <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+                <p>
+                    I am a 5th-year <span class="text-white font-medium">Electrical Engineering Co-op</span> student at McMaster University. My technical journey is defined by a fascination with process optimization through digital systems integrations.
+                </p>
+                <p>
+                    At <span class="text-white font-medium">Procter & Gamble</span>, I specialized in data digitization and automation initiatives. I bring that same rigor to <span class="text-white font-medium">every project, </span>whether I'm in the lab or at the keyboard.
+                </p>
+                <p>
+                    Beyond my studies, you can usually find me <span class="text-white font-medium">Baking</span>, hunting for new <span class="text-white font-medium">Records</span>, or behind a <span class="text-white font-medium">Camera</span> lens!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10 group hover:border-[#00F5FF]/30 transition-all duration-300">
+                    <span class="block text-[10px] uppercase tracking-[0.2em] text-[#00F5FF] font-bold mb-2">Academic Focus</span>
+                    <p class="text-sm text-gray-400 leading-snug">
+                        Control Systems & <br class="hidden md:block"> Digital Signal Processing
+                    </p>
+                </div>
+                
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10 group hover:border-[#00F5FF]/30 transition-all duration-300">
+                    <span class="block text-[10px] uppercase tracking-[0.2em] text-[#00F5FF] font-bold mb-2">Career Ambition</span>
+                    <p class="text-sm text-gray-400 leading-snug">
+                        Industrial Digitization & <br class="hidden md:block"> Process Optimization
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="py-24 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-20">
+    <div class="text-center mb-20 education-card opacity-0 translate-y-10 transition-all duration-1000">
+        <h2 class="text-sm uppercase tracking-[0.3em] text-[#00F5FF] font-bold mb-4">My Educational Journey</h2>
+        <h3 class="text-4xl md:text-5xl font-bold text-white">Academic Foundations</h3>
+    </div>
+
+    <div class="relative">
+        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-[2px] bg-white/10"></div>
+
+        <div class="space-y-20">
+            <div class="education-card opacity-0 translate-y-10 transition-all duration-1000 relative flex flex-col md:flex-row items-start md:items-center justify-between">
+                <div class="hidden md:block md:w-[45%]"></div>
+                
+                <div class="absolute left-[-24px] md:left-1/2 transform -translate-x-1/2 z-10 w-16 h-16 bg-[#0B0E14] rounded-full flex items-center justify-center border border-white/10 overflow-hidden shadow-[0_0_15px_rgba(0,245,255,0.1)]">
+                    <img src="images/Mac-Logo.png" alt="McMaster" class="logo-icon w-full h-full object-cover grayscale transition-all duration-1000">
+                </div>
+                
+                <div class="pl-16 md:pl-0 md:w-[45%] md:text-left">
+                    <span class="text-xs font-mono text-[#00F5FF] font-bold uppercase tracking-widest">2021 — 2027</span>
+                    <h4 class="text-2xl font-bold text-white mt-2">McMaster University</h4>
+                    <p class="text-gray-300 font-medium">Bachelor of Engineering, Electrical Engineering Co-op <span class="text-gray-500 text-sm italic">Minoring in Music</span></p>
+                    
+                    <div class="mt-4 grid grid-cols-2 gap-y-2 text-[10px] text-gray-500 uppercase tracking-tighter">
+                        <span class="flex items-center gap-1"><div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div> Control Systems</span>
+                        <span class="flex items-center gap-1"><div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div> Comm Systems</span>
+                        <span class="flex items-center gap-1"><div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div> Energy Conv.</span>
+                        <span class="flex items-center gap-1"><div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div> Electrical Sys.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-card opacity-0 translate-y-10 transition-all duration-1000 delay-300 relative flex flex-col md:flex-row items-start md:items-center justify-between">
+                <div class="pl-16 md:pl-0 md:w-[45%] md:text-right">
+                    <span class="text-xs font-mono text-[#00F5FF] font-bold uppercase tracking-widest">2017 — 2021</span>
+                    <h4 class="text-2xl font-bold text-white mt-2">Donald A. Wilson Secondary School</h4>
+                    <p class="text-gray-300 font-medium">French Immersion Diploma</p>
+                    
+                    <div class="mt-4 grid grid-cols-2 gap-y-2 text-[10px] text-gray-500 uppercase tracking-tighter md:justify-end">
+                        <span class="flex items-center md:justify-end gap-1 order-1 md:order-1">Grade: 97% Average <div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div></span>
+                        <span class="flex items-center md:justify-end gap-1 order-2 md:order-2">Honours Standing <div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div></span>
+                        <span class="flex items-center md:justify-end gap-1 order-3 md:order-3">French Studies Cert <div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div></span>
+                        <span class="flex items-center md:justify-end gap-1 order-4 md:order-4">Ontario Scholar <div class="w-1 h-1 bg-[#00F5FF] rounded-full"></div></span>
+                    </div>
+                </div>
+
+                <div class="absolute left-[-24px] md:left-1/2 transform -translate-x-1/2 z-10 w-16 h-16 bg-[#0B0E14] rounded-full flex items-center justify-center border border-white/10 overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                    <img src="images/Wilson-Logo.png" alt="Donald A. Wilson" class="logo-icon w-full h-full object-cover grayscale transition-all duration-1000">
+                </div>
+                
+                <div class="hidden md:block md:w-[45%]"></div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="py-24 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-20">
+    <div class="text-center mb-16">
+        <h2 class="text-sm uppercase tracking-[0.3em] text-[#00F5FF] font-bold mb-4">My Work Experience</h2>
+        <h3 class="text-4xl font-bold text-white">Professional Background</h3>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-8 min-h-[450px]">
+        <div class="flex md:flex-col overflow-x-auto md:overflow-visible border-l-2 border-white/5 md:w-1/3 shrink-0">
+            
+            <button onclick="showTab('pg')" id="btn-pg" class="exp-tab active-tab px-6 py-4 text-left hover:bg-white/5 transition-all border-l-2 border-transparent flex items-center gap-4">
+                <img src="images/PG-Logo.png" class="w-8 h-8 object-contain grayscale" alt="P&G">
+                <div>
+                    <span class="job-title-accent block font-bold text-white transition-colors duration-300">Procter & Gamble</span>
+                    <span class="text-[9px] text-gray-500 uppercase tracking-widest font-mono">Manufacturing Process Engineer</span>
+                </div>
+            </button>
+
+            <button onclick="showTab('tutorax')" id="btn-tutorax" class="exp-tab px-6 py-4 text-left hover:bg-white/5 transition-all border-l-2 border-transparent flex items-center gap-4">
+                <img src="images/Tutorax-Logo.png" class="w-8 h-8 object-contain grayscale" alt="Tutorax">
+                <div>
+                    <span class="job-title-accent block font-bold text-white transition-colors duration-300">Tutorax</span>
+                    <span class="text-[9px] text-gray-500 uppercase tracking-widest font-mono">Private Tutor</span>
+                </div>
+            </button>
+
+            <button onclick="showTab('joefresh')" id="btn-joefresh" class="exp-tab px-6 py-4 text-left hover:bg-white/5 transition-all border-l-2 border-transparent flex items-center gap-4">
+                <img src="images/JoeFresh-Logo.png" class="w-8 h-8 object-contain grayscale" alt="Joe Fresh">
+                <div>
+                    <span class="job-title-accent block font-bold text-white transition-colors duration-300">Joe Fresh</span>
+                    <span class="text-[9px] text-gray-500 uppercase tracking-widest font-mono">Sales Associate</span>
+                </div>
+            </button>
+        </div>
+
+        <div class="flex-grow glass-card p-8 rounded-3xl relative min-h-[350px]">
+            <div id="content-pg" class="exp-content space-y-4">
+                <div class="flex justify-between items-start">
+                    <h4 class="text-2xl font-bold text-white leading-tight">Process Engineer <span class="text-[#00F5FF]">@ P&G</span></h4>
+                    <span class="text-xs font-mono text-gray-500">05 - 12/2024</span>
+                </div>
+                <ul class="space-y-3 text-gray-400 text-sm leading-relaxed">
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Digitized product data collection to enhance manufacturing consistency.</li>
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Developed multi-linear regression models for proactive quality forecasting.</li>
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Led root-cause investigations to optimize production stability.</li>
+                </ul>
+            </div>
+
+            <div id="content-tutorax" class="exp-content hidden space-y-4">
+                <div class="flex justify-between items-start">
+                    <h4 class="text-2xl font-bold text-white leading-tight">Private Tutor <span class="text-[#00F5FF]">@ Tutorax</span></h4>
+                    <span class="text-xs font-mono text-gray-500">2023 — 2024</span>
+                </div>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Developed personalized lesson plans for Mathematics and Science.</li>
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Leveraged bilingual fluency to explain complex concepts in English and French.</li>
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Monitored student progress to ensure consistent academic improvement.</li>
+                </ul>
+            </div>
+
+            <div id="content-joefresh" class="exp-content hidden space-y-4">
+                <div class="flex justify-between items-start">
+                    <h4 class="text-2xl font-bold text-white leading-tight">Sales Associate <span class="text-[#00F5FF]">@ Joe Fresh</span></h4>
+                    <span class="text-xs font-mono text-gray-500">2019 — 2024</span>
+                </div>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Managed high-volume customer inquiries with professional interpersonal skills.</li>
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Coordinated inventory logistics and floor merchandising for peak efficiency.</li>
+                    <li class="flex gap-3"><span class="text-[#00F5FF]">▹</span> Maintained brand standards in a fast-paced, customer-centric environment.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="py-24 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
+    <div class="text-center mb-16">
+        <h2 class="text-sm uppercase tracking-[0.3em] text-[#00F5FF] font-bold mb-4">My Technical Portfolio </h2>
+        <h3 class="text-4xl md:text-5xl font-bold text-white">Featured Projects</h3>
+    </div>
+
+
+    
+    <div class="swiper projectSwiper pb-20">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide glass-card rounded-3xl overflow-hidden border border-white/5 bg-[#161B22]/50">
+                <div class="h-64 bg-[#0B0E14] relative flex items-center justify-center">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl font-light text-[#FF3B3B]/40 animate-[pulse_2s_infinite]">&lt;</span>
+                        <div class="flex flex-col gap-2">
+                            <div class="w-12 h-1 bg-[#FF3B3B]/30 rounded-full"></div>
+                            <div class="w-16 h-1 bg-[#FF3B3B]/20 rounded-full"></div>
+                            <div class="w-10 h-1 bg-[#FF3B3B]/30 rounded-full"></div>
+                        </div>
+                        <span class="text-4xl font-light text-[#FF3B3B]/40 animate-[pulse_2s_infinite] [animation-delay:1s]">/&gt;</span>
+                    </div>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-black/50 backdrop-blur-md text-[#FF3B3B] text-[9px] font-mono rounded-full border border-[#FF3B3B]/20">03 / 2026</span>
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <h4 class="text-2xl font-bold text-white">Caylia's <span class="text-[#FF3B3B]">Portfolio Site</span></h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">A personal website to showcase my engineering experiences, technical projects, and creative achievements.</p>
+                    <div class="pt-4 flex gap-6">
+                        <a href="https://github.com/cayliab03/cayliab03.github.io" class="text-[#FF3B3B] text-[10px] font-bold uppercase tracking-[0.2em] hover:underline">Source Code!</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-slide glass-card rounded-3xl overflow-hidden border border-white/5 bg-[#161B22]/50">
+                <div class="h-64 bg-[#0B0E14] relative flex items-center justify-center">
+                    <div class="flex items-end gap-1 h-20">
+                        <div class="w-2 bg-[#00F5FF]/20 animate-[pulse_1.2s_infinite] h-12"></div>
+                        <div class="w-2 bg-[#00F5FF]/40 animate-[pulse_1.8s_infinite] h-20"></div>
+                        <div class="w-2 bg-[#00F5FF]/60 animate-[pulse_1.4s_infinite] h-16"></div>
+                        <div class="w-2 bg-[#00F5FF]/40 animate-[pulse_2s_infinite] h-24"></div>
+                        <div class="w-2 bg-[#00F5FF]/20 animate-[pulse_1.6s_infinite] h-14"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-black/50 backdrop-blur-md text-[#00F5FF] text-[9px] font-mono rounded-full border border-[#00F5FF]/20">02 / 2026</span>
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <h4 class="text-2xl font-bold text-white">'AlgoRhythm' <span class="text-[#00F5FF]">Audio Analytics</span></h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Full-stack interactive audio platform that generates dynamic waveforms and BPM analytics for localized music libraries.</p>
+                    <div class="pt-4 flex gap-6">
+                        <a href="https://caylias-algorhythm.netlify.app/" class="text-[#00F5FF] text-[10px] font-bold uppercase tracking-[0.2em] hover:underline">Check it Out!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide glass-card rounded-3xl overflow-hidden border border-white/5 bg-[#161B22]/50">
+                <div class="h-64 bg-[#0B0E14] relative flex items-center justify-center">
+                    <div class="relative w-24 h-24">
+                        <div class="absolute inset-0 bg-purple-500/10 rounded-full animate-ping"></div>
+                        <div class="absolute inset-4 bg-purple-500/20 rounded-full animate-pulse"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-black/50 backdrop-blur-md text-purple-400 text-[9px] font-mono rounded-full border border-purple-400/20">05 / 2025</span>
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <h4 class="text-2xl font-bold text-white">Interactive <span class="text-purple-400">Activity Planner</span></h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Multi-page web application that recommends activities across 8 cities using structured datasets and integrating Google Maps API.</p>
+                    <div class="pt-4 flex gap-6">
+                        <a href="https://caylias-activity-planner.netlify.app/" class="text-purple-400 text-[10px] font-bold uppercase tracking-[0.2em] hover:underline">Explore Here!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide glass-card rounded-3xl overflow-hidden border border-white/5 bg-[#161B22]/50">
+                <div class="h-64 bg-[#0B0E14] relative flex items-center justify-center">
+                    <div class="relative w-32 h-32">
+                        <div class="absolute top-4 left-10 w-1 h-1 bg-blue-400 rounded-full animate-ping [animation-delay:0.2s]"></div>
+                        <div class="absolute top-10 left-20 w-1 h-1 bg-blue-500 rounded-full animate-ping [animation-delay:0.5s]"></div>
+                        <div class="absolute bottom-10 left-5 w-1 h-1 bg-blue-400 rounded-full animate-ping [animation-delay:0.8s]"></div>
+                        <div class="absolute top-20 right-10 w-1 h-1 bg-blue-500 rounded-full animate-ping [animation-delay:0.3s]"></div>
+                        <div class="absolute bottom-5 right-5 w-1 h-1 bg-blue-400 rounded-full animate-ping [animation-delay:1s]"></div>
+                        <div class="absolute inset-0 border border-blue-500/5 rounded-lg rotate-12"></div>
+                        <div class="absolute inset-0 border border-blue-500/5 rounded-lg -rotate-12"></div>
+                    </div>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-black/50 backdrop-blur-md text-blue-400 text-[9px] font-mono rounded-full border border-blue-400/20">04 / 2024</span>
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <h4 class="text-2xl font-bold text-white">Microprocessor <span class="text-blue-400">Systems Project</span></h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Device that scans surroundings and uses serial communication to create a 3D rendering of an enclosed space.</p>
+                    <div class="pt-4 flex gap-6">
+                        <a href="https://github.com/cayliab03/Microprocessor-Project" class="text-blue-400 text-[10px] font-bold uppercase tracking-[0.2em] hover:underline">Learn More!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide glass-card rounded-3xl overflow-hidden border border-white/5 bg-[#161B22]/50">
+                <div class="h-64 bg-[#0B0E14] relative flex items-center justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-emerald-500/10 blur-2xl rounded-full"></div>
+                        <svg class="w-20 h-20 text-emerald-400/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span class="px-3 py-1 bg-black/50 backdrop-blur-md text-emerald-400 text-[9px] font-mono rounded-full border border-emerald-400/20">02 / 2023</span>
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <h4 class="text-2xl font-bold text-white">Bend <span class="text-emerald-400">Your Footprint</span></h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">An interactive website with an embedded quiz that measures the user's carbon footprint and impact.</p>
+                    <div class="pt-4 flex gap-6">
+                        <a href="https://devpost.com/software/bend-your-footprint" class="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] hover:underline">Our Story!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<section id="skills" class="py-24 px-6 md:px-12 max-w-7xl mx-auto scroll-mt-20">
+    <div class="mb-16">
+        <h2 class="text-sm uppercase tracking-[0.3em] text-[#00F5FF] font-bold mb-4">My Specialized Toolkit</h2>
+        <h3 class="text-4xl md:text-5xl font-bold text-white">Core Capabilities</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        
+        <div class="md:col-span-2 glass-card p-8 rounded-3xl border border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 group">
+            <h4 class="text-[#00F5FF] text-xs font-bold uppercase tracking-widest mb-6">Programming & Analytics</h4>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">Python</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">FastAPI</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">TypeScript</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">SQL</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">R</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">MATLAB</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">C/C++</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">Verilog</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">VHDL</span>
+                <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-gray-300 group-hover:border-[#00F5FF]/50 transition-colors">Assembly</span>
+            </div>
+        </div>
+
+        <div class="md:row-span-2 glass-card p-8 rounded-3xl border border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 flex flex-col justify-between group">
+            <div>
+                <h4 class="text-[#00F5FF] text-xs font-bold uppercase tracking-widest mb-6">Hardware</h4>
+                <ul class="space-y-4 text-gray-400 text-sm font-medium">
+                    <li class="flex items-center gap-2 group-hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-[#00F5FF] rounded-full"></div> Oscilloscopes</li>
+                    <li class="flex items-center gap-2 group-hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-[#00F5FF] rounded-full"></div> Signal Generators</li>
+                    <li class="flex items-center gap-2 group-hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-[#00F5FF] rounded-full"></div> Integrated Circuits</li>
+                    <li class="flex items-center gap-2 group-hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-[#00F5FF] rounded-full"></div> Raspberry Pi</li>
+                </ul>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/5 text-[10px] text-gray-600 uppercase tracking-[0.2em] font-bold italic">
+                Lab Instrumentation
+            </div>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 group">
+            <h4 class="text-[#00F5FF] text-xs font-bold uppercase tracking-widest mb-4">Web Development</h4>
+            <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-400 font-mono">
+                <span class="group-hover:text-white">Next.js,</span>
+                <span class="group-hover:text-white">React,</span>
+                <span class="group-hover:text-white">HTML/CSS,</span>
+                <span class="group-hover:text-white">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="md:col-span-2 glass-card p-8 rounded-3xl border border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 group">
+            <h4 class="text-[#00F5FF] text-xs font-bold uppercase tracking-widest mb-6">Technical Tools & Software</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 text-[11px] text-gray-400 font-mono">
+                <div class="group-hover:text-white transition-colors">▹ GitHub / Git</div>
+                <div class="group-hover:text-white transition-colors">▹ VS Code</div>
+                <div class="group-hover:text-white transition-colors">▹ Netlify / Render</div>
+                <div class="group-hover:text-white transition-colors">▹ Uvicorn</div>
+                <div class="group-hover:text-white transition-colors">▹ Quartus II</div>
+                <div class="group-hover:text-white transition-colors">▹ ORCAD PSpice</div>
+                <div class="group-hover:text-white transition-colors">▹ Autodesk Inventor</div>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 flex items-center justify-center group">
+            <div class="text-center">
+                <p class="text-3xl font-bold text-white group-hover:text-[#00F5FF] transition-colors tracking-tighter">EN / FR</p>
+                <p class="text-[9px] uppercase tracking-widest text-gray-500 mt-2 font-bold">Bilingual Fluency</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contact" class="py-24 px-6 md:px-12 border-t border-white/5 bg-[#0D1117] relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00F5FF]/5 blur-[120px] rounded-full -z-0"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-sm uppercase tracking-[0.3em] text-[#00F5FF] font-bold mb-4">Say Hello!</h2>
+                    <h3 class="text-5xl md:text-7xl font-bold text-white tracking-tighter">I'd love to <br> connect.</h3>
+                </div>
+                
+                <p class="text-gray-400 text-lg max-w-md leading-relaxed">
+                     Thank you so much for taking the time to explore my work! I'm always open to <span class="text-white">expanding my network</span> and <span class="text-white">would love to hear from you</span>. If you'd like to connect, please don't hesitate to reach out!
+                </p>
+
+                <div class="inline-flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                    <div class="w-2 h-2 bg-[#00F5FF] rounded-full animate-pulse shadow-[0_0_8px_#00F5FF]"></div>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-300">Status: Always Learning</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                
+                <button onclick="copyEmail()" class="w-full text-left glass-card p-8 rounded-3xl border border-white/5 hover:border-[#00F5FF]/30 transition-all duration-500 group relative">
+                    <span class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Let's Get in Touch!</span>
+                    <div class="flex justify-between items-center">
+                        <span id="email-text" class="text-xl md:text-2xl font-bold text-white group-hover:text-[#00F5FF] transition-colors">cayliab@gmail.com</span>
+                        <svg class="w-5 h-5 text-gray-600 group-hover:text-[#00F5FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <span id="copy-status" class="absolute bottom-4 right-8 text-[10px] uppercase tracking-widest text-[#00F5FF] opacity-0 transition-opacity">Copied!</span>
+                </button>
+
+            <div class="grid grid-cols-3 gap-4">
+                
+                <a href="https://www.linkedin.com/in/caylia-bonnick/" target="_blank" 
+                class="glass-card p-6 rounded-3xl border border-white/5 
+                        hover:border-[#0077B5]/50 hover:shadow-[0_0_20px_rgba(0,119,181,0.2)] 
+                        transition-all duration-500 flex justify-center items-center group">
+                    <svg class="w-6 h-6 text-gray-500 group-hover:text-[#0077B5] transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+
+                <a href="https://github.com/cayliab03" target="_blank" 
+                class="glass-card p-6 rounded-3xl border border-white/5 
+                        hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] 
+                        transition-all duration-500 flex justify-center items-center group">
+                    <svg class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+
+                <a href="https://youtube.com/@cayliab03" target="_blank" 
+                class="glass-card p-6 rounded-3xl border border-white/5 
+                        hover:border-[#FF0000]/50 hover:shadow-[0_0_20px_rgba(255,0,0,0.2)] 
+                        transition-all duration-500 flex justify-center items-center group">
+                    <svg class="w-6 h-6 text-gray-500 group-hover:text-[#FF0000] transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl border border-white/5 hover:border-[#00F5FF]/20 transition-all duration-500 group">
+                <div class="flex items-center justify-between gap-6">
+                    <div class="flex-shrink-0 w-16 h-20 bg-white/5 border border-white/10 rounded-lg relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute top-0 right-0 w-6 h-6 bg-white/10 -rotate-45 translate-x-3 -translate-y-3"></div>
+                        <svg class="w-8 h-8 text-gray-600 group-hover:text-[#00F5FF] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+
+                    <div class="flex-grow space-y-3">
+                        <div>
+                            <span class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Documentation</span>
+                            <h4 class="text-sm font-bold text-white tracking-wide">Caylia-Bonnick-Resume.pdf</h4>
+                        </div>
+                        
+                        <a href="images/Caylia-Bonnick-Resume.pdf" download class="inline-flex items-center gap-2 px-4 py-2 bg-[#00F5FF]/10 border border-[#00F5FF]/20 rounded-xl text-[10px] font-bold uppercase tracking-widest text-[#00F5FF] hover:bg-[#00F5FF] hover:text-[#0B0E14] transition-all duration-300">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <span class="text-2xl font-bold text-[#00F5FF] tracking-tighter">CB.</span>
+                    <p class="text-gray-500 text-sm tracking-wide">
+                            © 2026 | Made with 
+                            <span class="inline-block animate-heart-pulse text-[#00F5FF] mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 inline">
+                                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3c1.74 0 3.285.82 4.312 2.098C13.027 3.82 14.57 3 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                </svg>
+                            </span>
+                            by <span class="text-white font-medium">Caylia Bonnick</span>
+                        </p>
+            </div>
+            
+            <div class="flex gap-8 text-[10px] uppercase tracking-widest text-gray-500">
+                <a href="#" class="hover:text-white transition">Back to Top</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* --- 1. Global & Typography --- */
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #0B0E14;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+body::-webkit-scrollbar { display: none; }
+
+h1, h2, h3, .nav-logo { font-family: 'Space Grotesk', sans-serif; }
+
+/* --- 2. Navigation & Glass Effects --- */
+.nav-glass {
+    background: rgba(11, 14, 20, 0.7);
+    backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    bottom: -4px; left: 0;
+    background-color: #00F5FF;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after { width: 100%; }
+
+.glow-on-hover { transition: all 0.3s ease; }
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+    border-color: #00F5FF;
+}
+
+/* --- 3. Experience Tabs --- */
+.active-tab {
+    background: rgba(0, 245, 255, 0.05); 
+    border-left: 2px solid #00F5FF !important;
+    transition: all 0.3s ease;
+}
+
+.exp-tab:hover { border-left: 2px solid rgba(0, 245, 255, 0.3); }
+
+/* --- 4. Project Swiper --- */
+.projectSwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    overflow: visible !important;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.projectSwiper::-webkit-scrollbar { display: none; }
+
+.swiper-slide {
+    width: 320px; 
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide .glass-card { height: 100%; }
+
+@media (min-width: 768px) {
+    .swiper-slide { width: 450px; }
+}
+
+.swiper-pagination-bullet-active {
+    background: #00F5FF !important;
+    box-shadow: 0 0 10px #00F5FF;
+}
+
+/* --- 5. Animations & Mascot --- */
+.syntax-prompt { color: #FF79C6; }
+.syntax-func { color: #BD93F9; }
+.syntax-str { color: #50FA7B; }
+
+#boot-text {
+    font-family: 'Space Mono', monospace;
+    text-shadow: 0 0 10px rgba(80, 250, 123, 0.2);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+@keyframes scroll-line {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+.animate-scroll-line { animation: scroll-line 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+@keyframes heart-pulse {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    45% { transform: scale(1.15); }
+}
+.animate-heart-pulse { animation: heart-pulse 2s ease-in-out infinite; display: inline-block; }
+
+#robot-player {
+    filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.15));
+    transition: transform 0.5s ease;
+}
+
+/* --- 6. MOBILE & TABLET REFINEMENT --- */
+
+@media (max-width: 1024px) {
+    /* Prevent overlapping headers */
+    h1 { font-size: 4rem !important; line-height: 1.1; }
+    h2 { font-size: 2.5rem !important; }
+    h3 { font-size: 2rem !important; }
+    
+    /* Adjust spacing for tablet hero */
+    #home-content { padding-top: 120px; }
+}
+
+@media (max-width: 768px) {
+    /* Experience Tabs: Stack horizontally and allow scroll */
+    #experience .flex-col {
+        flex-direction: row !important;
+        overflow-x: auto;
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 2rem;
+    }
+
+    .exp-tab {
+        border-left: none !important;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+
+    .active-tab {
+        border-bottom: 2px solid #00F5FF !important;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Prevent long names from breaking layout */
+    h1 { font-size: 3rem !important; }
+    h2 { font-size: 2.2rem !important; }
+
+    /* Adjust robot size for small screens */
+    #robot-player {
+        max-width: 200px !important;
+        margin: 0 auto;
+    }
+
+    /* Fix Education layout for mobile */
+    .education-card { padding: 1.5rem !important; }
+    
+    /* Mobile Menu Overlay Styles */
+    #mobile-menu {
+        background: rgba(11, 14, 20, 0.95);
+        backdrop-filter: blur(15px);
+    }
+}
+
+/* Touch fixes */
+@media (hover: none) {
+    .glow-on-hover:hover { box-shadow: none; }
+    .nav-link, .exp-tab, button { min-height: 44px; }
+}
